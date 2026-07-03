@@ -1,0 +1,216 @@
+:root {
+  --farbe-dunkel: #1f2a44;
+  --farbe-akzent: #2e75b6;
+  --farbe-hell: #dae3f3;
+  --farbe-text: #000000;
+  --farbe-weiss: #ffffff;
+  --farbe-grau: #767676;
+  --schatten: 0px 8px 8px rgba(0, 0, 0, 0.18);
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--farbe-text);
+  line-height: 1.6;
+  background: var(--farbe-weiss);
+}
+
+.sprache {
+  text-align: right;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px 0;
+}
+
+.sprache a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--farbe-hell);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  color: var(--farbe-dunkel);
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: var(--schatten);
+  transition: all 0.2s ease;
+}
+
+.sprache a .flagge {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sprache a:hover {
+  background: var(--farbe-akzent);
+  color: var(--farbe-weiss);
+  transform: translateY(-3px);
+}
+
+.hero {
+  background: var(--farbe-akzent);
+  background: linear-gradient(135deg, var(--farbe-dunkel), var(--farbe-akzent));
+  color: var(--farbe-weiss);
+  padding: 50px 20px;
+}
+
+.hero-inhalt {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.listen-bereich {
+  width: min(600px, calc(100% - 40px));
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: max(20px, calc((100% - 1200px) / 2));
+  padding: 24px;
+  background: var(--farbe-weiss);
+  border: 2px solid var(--farbe-hell);
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+}
+
+.listen-titel {
+  text-align: left;
+  margin-bottom: 20px;
+  color: var(--farbe-dunkel);
+  font-size: 22px;
+  padding-bottom: 6px;
+  border-bottom: 5px solid var(--farbe-akzent);
+}
+
+.eingabe-zeile {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#eingabe {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid var(--farbe-hell);
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+#eingabe:focus {
+  outline: none;
+  border-color: var(--farbe-akzent);
+}
+
+.knopf-haupt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  background: var(--farbe-hell);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0 14px;
+  color: var(--farbe-dunkel);
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: var(--schatten);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.knopf-haupt:hover {
+  background: var(--farbe-akzent);
+  color: var(--farbe-weiss);
+  transform: translateY(-3px);
+}
+
+.artikel-liste {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.artikel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 6px;
+  border-bottom: 1px solid var(--farbe-hell);
+}
+
+.artikel-check {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--farbe-akzent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.artikel-name {
+  flex: 1;
+  font-size: 16px;
+  color: var(--farbe-text);
+}
+
+.artikel-loeschen {
+  background: var(--farbe-hell);
+  color: var(--farbe-dunkel);
+  border: none;
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.artikel-loeschen:hover {
+  background: #c62828;
+  color: var(--farbe-weiss);
+}
+
+.artikel.erledigt .artikel-name {
+  text-decoration: line-through;
+  color: var(--farbe-grau);
+}
+
+.knopf-sekundaer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  background: var(--farbe-hell);
+  color: var(--farbe-dunkel);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--schatten);
+  transition: all 0.2s ease;
+}
+
+.knopf-sekundaer:hover {
+  background: var(--farbe-akzent);
+  color: var(--farbe-weiss);
+  transform: translateY(-3px);
+}

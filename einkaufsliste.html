@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de-CH">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Einkaufsliste</title>
+  <link rel="stylesheet" href="einkaufsliste.css" />
+</head>
+
+<body>
+
+  <div class="sprache">
+    <a href="index.html"><span class="flagge">🏠</span>Startseite</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inhalt">
+      <div>
+        <h1>Einkaufslisten</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="listen-bereich">
+
+    <h2 class="listen-titel">Liste 1</h2>
+
+    <div class="eingabe-zeile">
+      <input type="text" id="eingabe" placeholder="Artikel eingeben" />
+      <button id="hinzufuegen" class="knopf-haupt">Hinzufügen</button>
+    </div>
+
+    <ul id="liste" class="artikel-liste">
+
+      <li class="artikel">
+        <input type="checkbox" class="artikel-check" />
+        <span class="artikel-name">Milch</span>
+        <button class="artikel-loeschen">Löschen</button>
+      </li>
+
+      <li class="artikel">
+        <input type="checkbox" class="artikel-check" />
+        <span class="artikel-name">Brot</span>
+        <button class="artikel-loeschen">Löschen</button>
+      </li>
+
+      <li class="artikel">
+        <input type="checkbox" class="artikel-check" />
+        <span class="artikel-name">Äpfel</span>
+        <button class="artikel-loeschen">Löschen</button>
+      </li>
+
+    </ul>
+
+    <button id="erledigte-entfernen" class="knopf-sekundaer">Erledigte entfernen</button>
+
+  </main>
+
+  <script src="einkaufsliste.js"></script>
+
+</body>
+
+</html>

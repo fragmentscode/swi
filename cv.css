@@ -1,0 +1,586 @@
+:root {
+  --farbe-dunkel: #1f2a44;
+  --farbe-akzent: #2e75b6;
+  --farbe-hell: #dae3f3;
+  --farbe-text: #000000;
+  --farbe-weiss: #ffffff;
+  --farbe-grau: #767676;
+  --schatten: 0px 8px 8px rgba(0, 0, 0, 0.18);
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--farbe-text);
+  line-height: 1.6;
+  background: var(--farbe-weiss);
+}
+
+.hero {
+  background: var(--farbe-akzent);
+  background: linear-gradient(135deg, var(--farbe-dunkel), var(--farbe-akzent));
+  color: var(--farbe-weiss);
+  padding: 50px 20px;
+}
+
+.hero-inhalt {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.portrait-rahmen {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.portrait-rahmen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 30px var(--farbe-weiss);
+  border-style: dotted dashed solid double;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.portrait-rahmen:hover::before {
+  transform: rotate(40deg);
+}
+
+.portrait {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--schatten);
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.hero .funktion {
+  font-size: 20px;
+  color: var(--farbe-hell);
+  margin-bottom: 12px;
+}
+
+.hero .ueber-mich {
+  max-width: 930px;
+  font-size: 16px;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+}
+
+.karte {
+  background: var(--farbe-weiss);
+  border: 2px solid var(--farbe-hell);
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.spalte-links .karte {
+  background: var(--farbe-hell);
+  border: 2px solid var(--farbe-hell);
+}
+
+h2 {
+  color: var(--farbe-dunkel);
+  font-size: 22px;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 5px solid var(--farbe-akzent);
+}
+
+h3 {
+  color: var(--farbe-akzent);
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.zeitraum {
+  font-size: 14px;
+  color: var(--farbe-grau);
+  font-weight: bold;
+}
+
+ul {
+  list-style-position: outside;
+  padding-left: 16px;
+  margin: 6px 0 12px;
+}
+
+li {
+  padding-left: 0;
+  margin-bottom: 4px;
+}
+
+.hobbys {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.hobby {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.hobby-icon {
+  font-size: 22px;
+  line-height: 1.2;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hobby:hover .hobby-icon {
+  transform: translateY(-8px);
+  filter: drop-shadow(0px 6px 1.5px rgba(0, 0, 0, 0.18));
+}
+
+.hobby-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hobby-titel {
+  font-weight: bold;
+  color: var(--farbe-dunkel);
+}
+
+.hobby-detail {
+  font-size: 14px;
+  color: var(--farbe-grau);
+}
+
+.hobby-link {
+  color: var(--farbe-akzent);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.25s ease, color 0.2s ease;
+}
+
+.hobby-link:hover {
+  color: var(--farbe-dunkel);
+  text-decoration-color: var(--farbe-dunkel);
+}
+
+.info-liste {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.info-zeile {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.info-gruppe {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.info-emoji {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.info-zeile:hover .info-emoji {
+  transform: translateY(-8px);
+  filter: drop-shadow(0px 6px 1.5px rgba(0, 0, 0, 0.18));
+}
+
+.info-label {
+  font-weight: bold;
+  color: var(--farbe-dunkel);
+}
+
+.info-wert {
+  color: var(--farbe-grau);
+  text-align: right;
+  font-size: 14px;
+}
+
+.sprach-zeile {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.sprach-flagge {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.sprach-zeile:hover .sprach-flagge {
+  transform: translateY(-8px);
+  filter: drop-shadow(0px 6px 1.5px rgba(0, 0, 0, 0.18));
+}
+
+.sprach-name {
+  font-weight: bold;
+  color: var(--farbe-dunkel);
+}
+
+.sprach-niveau {
+  margin-left: auto;
+  text-align: right;
+  color: var(--farbe-grau);
+  font-size: 14px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.icons a {
+  flex: 1;
+  min-width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--farbe-hell);
+  border-radius: var(--radius);
+  padding: 14px 6px;
+  text-decoration: none;
+  color: var(--farbe-dunkel);
+  font-size: 14px;
+  box-shadow: var(--schatten);
+  transition: all 0.2s ease;
+}
+
+.icons a .icon {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.icons a:hover {
+  background: var(--farbe-akzent);
+  color: var(--farbe-weiss);
+  transform: translateY(-10px);
+}
+
+.kompetenz-gruppe {
+  margin-bottom: 16px;
+}
+
+.kompetenz-gruppe:last-of-type {
+  margin-bottom: 0;
+}
+
+.kompetenz-gruppe h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: var(--farbe-dunkel);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border-bottom: 2px solid var(--farbe-grau);
+  padding-bottom: 4px;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+  padding: 3px 6px;
+  border-radius: var(--radius);
+  transition: background 0.15s ease;
+}
+
+.skill:hover {
+  background: var(--farbe-weiss);
+}
+
+.skill-name {
+  color: var(--farbe-text);
+}
+
+.rating {
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+.rating .full {
+  color: var(--farbe-akzent);
+}
+
+.rating .empty {
+  color: var(--farbe-hell);
+}
+
+.legende {
+  font-size: 12px;
+  color: var(--farbe-grau);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.sprache {
+  text-align: right;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px 0;
+}
+
+.sprache a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--farbe-hell);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  color: var(--farbe-dunkel);
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: var(--schatten);
+  transition: all 0.2s ease;
+}
+
+.sprache a .flagge {
+  font-size: 18px;
+  line-height: 1;
+}
+
+img.flagge-img,
+img.sprach-flagge-img {
+  width: 22px;
+  height: auto;
+  border-radius: 2px;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  vertical-align: middle;
+}
+
+.sprach-zeile:hover img.sprach-flagge-img {
+  transform: translateY(-8px);
+  filter: drop-shadow(0px 6px 1.5px rgba(0, 0, 0, 0.18));
+}
+
+a {
+  color: var(--farbe-akzent);
+}
+
+.sprache a:hover {
+  background: var(--farbe-akzent);
+  color: var(--farbe-weiss);
+  transform: translateY(-3px);
+}
+
+footer {
+  background: var(--farbe-dunkel);
+  border: 2px solid var(--farbe-dunkel);
+  color: var(--farbe-weiss);
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inhalt {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero .ueber-mich {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media print {
+  body {
+    color: #000;
+  }
+
+  .hero {
+    background: none;
+    color: #000;
+    padding: 0 0 10px;
+    border-bottom: 2px solid #000;
+  }
+
+  .hero-inhalt {
+    gap: 18px;
+  }
+
+  .portrait-rahmen {
+    width: 110px;
+    height: 110px;
+  }
+
+  .portrait-rahmen::before {
+    border: 3px solid #000;
+    transform: none;
+  }
+
+  .portrait {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 104px;
+    height: 104px;
+    box-shadow: none;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .hero .funktion {
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 6px;
+  }
+
+  .hero .ueber-mich {
+    font-size: 13px;
+  }
+
+  .sprache,
+  .icons {
+    display: none;
+  }
+
+  .karte,
+  .spalte-links .karte {
+    box-shadow: none;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  .layout {
+    display: block;
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 0;
+  }
+
+  .spalte-links,
+  .spalte-rechts {
+    display: block;
+  }
+
+  .karte {
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .skill,
+  .hobby,
+  .info-zeile,
+  .sprach-zeile,
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  p,
+  li {
+    orphans: 2;
+    widows: 2;
+  }
+
+  ul {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .kompetenz-gruppe h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .zeitraum {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  footer {
+    background: none;
+    color: #000;
+    border: none;
+    border-top: 1px solid #000;
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+}
