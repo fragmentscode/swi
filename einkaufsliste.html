@@ -27,31 +27,11 @@
     <h2 class="listen-titel">Liste 1</h2>
 
     <div class="eingabe-zeile">
-      <input type="text" id="eingabe" placeholder="Artikel eingeben" />
+      <input type="text" id="eingabe" placeholder="Artikel eingeben" maxlength="44" />
       <button id="hinzufuegen" class="knopf-haupt">Hinzufügen</button>
     </div>
 
-    <ul id="liste" class="artikel-liste">
-
-      <li class="artikel">
-        <input type="checkbox" class="artikel-check" />
-        <span class="artikel-name">Milch</span>
-        <button class="artikel-loeschen">Löschen</button>
-      </li>
-
-      <li class="artikel">
-        <input type="checkbox" class="artikel-check" />
-        <span class="artikel-name">Brot</span>
-        <button class="artikel-loeschen">Löschen</button>
-      </li>
-
-      <li class="artikel">
-        <input type="checkbox" class="artikel-check" />
-        <span class="artikel-name">Äpfel</span>
-        <button class="artikel-loeschen">Löschen</button>
-      </li>
-
-    </ul>
+    <ul id="liste" class="artikel-liste"></ul>
 
     <button id="erledigte-entfernen" class="knopf-sekundaer">Erledigte entfernen</button>
 
