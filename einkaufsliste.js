@@ -3,22 +3,35 @@ const knopf = document.getElementById("hinzufuegen");
 const liste = document.getElementById("liste");
 const erledigteEntfernenKnopf = document.getElementById("erledigte-entfernen");
 
-function artikelHinzufuegen() {
-  const name = eingabefeld.value.trim();
+function speichern() {
+  const artikel = liste.querySelectorAll(".artikel");
+  const daten = [];
 
-  if (name === "") {
-    return;
-  }
+  artikel.forEach(function (element) {
+    daten.push({
+      name: element.querySelector(".artikel-name").textContent,
+      erledigt: element.classList.contains("erledigt")
+    });
+  });
 
+  localStorage.setItem("einkaufsliste", JSON.stringify(daten));
+}
+
+function artikelErstellen(name, erledigt) {
   const neuerArtikel = document.createElement("li");
   neuerArtikel.classList.add("artikel");
+  if (erledigt) {
+    neuerArtikel.classList.add("erledigt");
+  }
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add("artikel-check");
+  checkbox.checked = erledigt;
 
   checkbox.addEventListener("change", function () {
     neuerArtikel.classList.toggle("erledigt", checkbox.checked);
+    speichern();
   });
 
   const artikelName = document.createElement("span");
@@ -31,6 +44,7 @@ function artikelHinzufuegen() {
 
   loeschKnopf.addEventListener("click", function () {
     loeschKnopf.parentElement.remove();
+    speichern();
   });
 
   neuerArtikel.appendChild(checkbox);
@@ -38,9 +52,33 @@ function artikelHinzufuegen() {
   neuerArtikel.appendChild(loeschKnopf);
 
   liste.appendChild(neuerArtikel);
+}
+
+function artikelHinzufuegen() {
+  const name = eingabefeld.value.trim();
+
+  if (name === "") {
+    return;
+  }
+
+  artikelErstellen(name, false);
+  speichern();
 
   eingabefeld.value = "";
   eingabefeld.focus();
+}
+
+function laden() {
+  const gespeichert = localStorage.getItem("einkaufsliste");
+
+  if (gespeichert === null) {
+    return;
+  }
+
+  const daten = JSON.parse(gespeichert);
+  daten.forEach(function (eintrag) {
+    artikelErstellen(eintrag.name, eintrag.erledigt);
+  });
 }
 
 knopf.addEventListener("click", function () {
@@ -58,4 +96,7 @@ erledigteEntfernenKnopf.addEventListener("click", function () {
   erledigte.forEach(function (artikel) {
     artikel.remove();
   });
+  speichern();
 });
+
+laden();

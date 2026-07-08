@@ -215,3 +215,26 @@ body {
   color: var(--farbe-weiss);
   transform: translateY(-3px);
 }
+@media (max-width: 600px) {
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .listen-bereich {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .eingabe-zeile {
+    flex-direction: column;
+  }
+
+  .knopf-haupt {
+    width: 100%;
+  }
+}
